@@ -64,7 +64,7 @@ cd /Users/yontenkinleytenzin/Desktop/swe302_assignments/golang-gin-realworld-exa
 go test ./... -v | tee test_output.txt
 ```
 
-![alt text](images/assign1/1.png)
+![Figure 1 — full test run showing final PASS/ok lines and SQL logs](images/assign1/1.png)
 
 2. Save users package output with DB logs:
 
@@ -81,7 +81,7 @@ git status --porcelain
 git --no-pager diff --staged || git --no-pager diff
 ```
 
-![alt text](images/assign1/3.png)
+![Figure 3 — git status and diff output showing untracked/changed files](images/assign1/3.png)
 
 4. Open key files in your editor and screenshot their tabs and content:
 
