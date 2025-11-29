@@ -156,7 +156,6 @@ func TestNewError(t *testing.T) {
 	type NotExist struct {
 		heheda string
 	}
-	db.AutoMigrate(NotExist{})
 
 	commenError := NewError("database", db.Find(NotExist{heheda: "heheda"}).Error)
 	assert.IsType(commenError, commenError, "commenError should have right type")
