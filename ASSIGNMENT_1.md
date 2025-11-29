@@ -3,7 +3,7 @@
 ## Overview
 In this assignment, you will implement comprehensive unit tests, integration tests, and analyze test coverage for the RealWorld application (both backend and frontend).
 
-## Learning Objectives
+## Learning Objective
 - Write  unit tests for isolated components
 - Implement integration tests for API endpoints and component interactions
 - Measure and improve test coverage
