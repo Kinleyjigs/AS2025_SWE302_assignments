@@ -63,8 +63,26 @@ Insert screenshots in the `screenshots/` folder (or upload them into this repo) 
 cd /Users/yontenkinleytenzin/Desktop/swe302_assignments/golang-gin-realworld-example-app
 go test ./... -v | tee test_output.txt
 ```
+ 
+Screenshots
+-----------
+
+Below are the screenshots captured during testing — each image has a short caption describing what to capture and why it is included.
 
 ![Figure 1 — full test run showing final PASS/ok lines and SQL logs](images/assign1/1.png)
+*Figure 1: Full `go test ./... -v` run showing SQL statements (schema creation) and the final `PASS`/`ok` summary — used as evidence that tests completed successfully.*
+
+![Figure 2 — focused git status output showing tracked/untracked files](images/assign1/2.png)
+*Figure 2: `git status --porcelain` output showing which files are modified, deleted, or untracked — used as submission evidence of repository state.*
+
+![Figure 3 — git diff output showing staged/unstaged changes](images/assign1/3.png)
+*Figure 3: `git diff` (or staged diff) showing the specific changes made to source and test files — used to show the exact edits that produced green tests.*
+
+![Figure 4 — users unit test head showing `unauthRequestTests` placeholder](images/assign1/4.png)
+*Figure 4: Editor view of `users/unit_test.go` highlighting the `unauthRequestTests` placeholder and import block used during fixes.*
+
+![Figure 5 — users validators file showing update validation logic](images/assign1/5.png)
+*Figure 5: Editor view of `users/validators.go` showing the changes that make update operations validate only provided fields.*
 
 2. Save users package output with DB logs:
 
