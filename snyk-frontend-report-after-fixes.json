@@ -1,0 +1,283 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JS-FORMDATA-10841150",
+      "title": "Predictable Value Range from Previous Values",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N/E:P",
+      "credit": [
+        "Ben Shonaldmann"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<2.5.4",
+          ">=3.0.0 <3.0.4",
+          ">=4.0.0 <4.0.4"
+        ]
+      },
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "2.5.4",
+        "3.0.4",
+        "4.0.4"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "critical",
+      "cvssScore": 9.4,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "form-data",
+      "references": [
+        {
+          "url": "https://github.com/form-data/form-data/commit/3d1723080e6577a66f17f163ecd345a21d8d0fd0",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/form-data/form-data/commit/b88316c94bb004323669cd3639dc8bb8262539eb",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/form-data/form-data/commit/c6ced61d4fae8f617ee2fd692133ed87baa5d0fd",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/benweissmann/CVE-2025-7783-poc",
+          "title": "POC"
+        },
+        {
+          "url": "https://github.com/form-data/form-data/blob/426ba9ac440f95d1998dac9a5cd8d738043b048f/lib/form_data.js%23L347",
+          "title": "Vulnerable Code"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2025-07-19T15:04:32.791635Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:P",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.4,
+          "cvssVersion": "4.0",
+          "modificationTime": "2025-07-24T06:39:27.679970Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N/E:P",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.7,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-07-24T06:39:27.679970Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2025-07-19T15:04:32.791635Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Predictable Value Range from Previous Values via the `boundary` value, which uses `Math.random()`. An attacker can manipulate HTTP request boundaries by exploiting predictable values, potentially leading to HTTP parameter pollution.\n## Remediation\nUpgrade `form-data` to version 2.5.4, 3.0.4, 4.0.4 or higher.\n## References\n- [GitHub Commit](https://github.com/form-data/form-data/commit/3d1723080e6577a66f17f163ecd345a21d8d0fd0)\n- [GitHub Commit](https://github.com/form-data/form-data/commit/b88316c94bb004323669cd3639dc8bb8262539eb)\n- [GitHub Commit](https://github.com/form-data/form-data/commit/c6ced61d4fae8f617ee2fd692133ed87baa5d0fd)\n- [POC](https://github.com/benweissmann/CVE-2025-7783-poc)\n- [Vulnerable Code](https://github.com/form-data/form-data/blob/426ba9ac440f95d1998dac9a5cd8d738043b048f/lib/form_data.js#L347)\n",
+      "epssDetails": {
+        "percentile": "0.19291",
+        "probability": "0.00062",
+        "modelVersion": "v2025.03.14"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2025-7783"
+        ],
+        "CWE": [
+          "CWE-343"
+        ],
+        "GHSA": [
+          "GHSA-fjxv-7rqg-78g4",
+          "GHSA-rm8p-cx58-hcvx"
+        ]
+      },
+      "packageName": "form-data",
+      "proprietary": false,
+      "creationTime": "2025-07-20T07:10:33.211640Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2025-07-18T16:43:35Z",
+      "exploitDetails": {
+        "sources": [
+          "PoC in GitHub",
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Proof of Concept",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "npm",
+      "publicationTime": "2025-07-20T10:16:27.524069Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2025-07-27T05:20:01.299407Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "critical",
+      "from": [
+        "react-redux-realworld-example-app@0.1.0",
+        "superagent@3.8.3",
+        "form-data@2.3.3"
+      ],
+      "upgradePath": [
+        false,
+        "superagent@10.2.2",
+        "form-data@4.0.5"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "form-data",
+      "version": "2.3.3"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 77,
+  "org": "kinleyjigs",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "npm",
+  "projectId": "e87d1f83-9e8f-4400-bf11-c051089add36",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "1 vulnerable dependency path",
+  "remediation": {
+    "unresolved": [],
+    "upgrade": {
+      "superagent@3.8.3": {
+        "upgradeTo": "superagent@10.2.2",
+        "upgrades": [
+          "form-data@2.3.3"
+        ],
+        "vulns": [
+          "SNYK-JS-FORMDATA-10841150"
+        ]
+      }
+    },
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 1,
+  "projectName": "react-redux-realworld-example-app",
+  "displayTargetFile": "package-lock.json",
+  "hasUnknownVersions": false,
+  "path": "/Users/yontenkinleytenzin/Desktop/swe302_assignments/react-redux-realworld-example-app"
+}

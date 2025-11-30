@@ -6,11 +6,11 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
 	"github.com/go-playground/validator/v10"
+	"github.com/golang-jwt/jwt/v4"
 
-	"github.com/gin-gonic/gin/binding"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
@@ -30,19 +30,18 @@ const NBRandomPassword = "A String Very Very Very Niubilty!!@##$!@#4"
 
 // A Util function to generate jwt_token which can be used in the request header
 func GenToken(id uint) string {
-	jwt_token := jwt.New(jwt.GetSigningMethod("HS256"))
-	// Set some claims
-	jwt_token.Claims = jwt.MapClaims{
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"id":  id,
 		"exp": time.Now().Add(time.Hour * 24).Unix(),
-	}
+	})
 	// Sign and get the complete encoded token as a string
-	token, _ := jwt_token.SignedString([]byte(NBSecretPassword))
-	return token
+	signed, _ := token.SignedString([]byte(NBSecretPassword))
+	return signed
 }
 
 // My own Error type that will help return my customized Error info
-//  {"database": {"hello":"no such table", error: "not_exists"}}
+//
+//	{"database": {"hello":"no such table", error: "not_exists"}}
 type CommonError struct {
 	Errors map[string]interface{} `json:"errors"`
 }
