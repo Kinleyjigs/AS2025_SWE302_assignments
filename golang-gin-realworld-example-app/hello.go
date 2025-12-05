@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 
-	"github.com/jinzhu/gorm"
 	"realworld-backend/articles"
 	"realworld-backend/common"
 	"realworld-backend/users"
+
+	"github.com/jinzhu/gorm"
 )
 
 func Migrate(db *gorm.DB) {
@@ -28,6 +29,32 @@ func main() {
 	defer db.Close()
 
 	r := gin.Default()
+
+	// Security Headers Middleware
+	r.Use(func(c *gin.Context) {
+		// Prevent clickjacking attacks
+		c.Header("X-Frame-Options", "DENY")
+
+		// Prevent MIME-sniffing
+		c.Header("X-Content-Type-Options", "nosniff")
+
+		// XSS Protection (legacy, but still useful for older browsers)
+		c.Header("X-XSS-Protection", "1; mode=block")
+
+		// Force HTTPS (when deployed with HTTPS)
+		c.Header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+
+		// Content Security Policy
+		c.Header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' http://localhost:4100")
+
+		// Referrer Policy
+		c.Header("Referrer-Policy", "strict-origin-when-cross-origin")
+
+		// Permissions Policy (formerly Feature-Policy)
+		c.Header("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
+
+		c.Next()
+	})
 
 	// Configure CORS
 	r.Use(cors.New(cors.Config{
