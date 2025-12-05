@@ -10,10 +10,10 @@ This report documents the performance testing and end-to-end testing conducted o
 - **Part B:** Cypress End-to-End Testing (30 test cases across 9 test suites)
 
 **Key Findings:**
-- ✅ **Excellent Response Times:** p95 response times ranged from 2-37ms under various load conditions
-- ✅ **High Throughput:** System handled up to 24,263 requests/second during spike test
-- ⚠️ **API Reliability Issues:** 33-37% error rate on `/tags` and `/user` endpoints
-- ⚠️ **E2E Test Failures:** 100% failure rate due to backend API issues
+- **Excellent Response Times:** p95 response times ranged from 2-37ms under various load conditions
+- **High Throughput:** System handled up to 24,263 requests/second during spike test
+- **API Reliability Issues:** 33-37% error rate on `/tags` and `/user` endpoints
+- **E2E Test Failures:** 100% failure rate due to backend API issues
 
 ---
 
@@ -43,23 +43,23 @@ This report documents the performance testing and end-to-end testing conducted o
 
 | Metric | Value | Threshold | Status |
 |--------|-------|-----------|--------|
-| **p(95) Response Time** | 2.14ms | < 500ms | ✅ PASS |
-| **p(90) Response Time** | 1.69ms | N/A | ✅ Excellent |
-| **Average Response Time** | 870µs | N/A | ✅ Excellent |
-| **Error Rate** | 37.50% | < 1% | ❌ FAIL |
-| **Throughput** | 69.76 req/s | N/A | ✓ Good |
-| **Total Requests** | 67,177 | N/A | ✓ |
-| **Successful Requests** | 41,985 (62.5%) | N/A | ⚠️ |
+| **p(95) Response Time** | 2.14ms | < 500ms | PASS |
+| **p(90) Response Time** | 1.69ms | N/A | Excellent |
+| **Average Response Time** | 870µs | N/A | Excellent |
+| **Error Rate** | 37.50% | < 1% | FAIL |
+| **Throughput** | 69.76 req/s | N/A | Good |
+| **Total Requests** | 67,177 | N/A | Good |
+| **Successful Requests** | 41,985 (62.5%) | N/A | Warning |
 
 #### Key Findings
 
-✅ **Strengths:**
+**Strengths:**
 - Exceptional response times well below threshold (2.14ms vs 500ms target)
 - Consistent performance across all VU levels
 - No timeouts or crashes observed
 - Articles endpoint performed perfectly (100% success)
 
-⚠️ **Issues Identified:**
+**Issues Identified:**
 - High error rate (37.5%) on `/tags` and `/user` endpoints
 - Only `/articles` endpoint functioning correctly
 - Authentication-related failures on user creation endpoint
