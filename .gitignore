@@ -1,2 +1,7 @@
 CLAUDE.md
-gorm.dbgolang-gin-realworld-example-app/gorm_test.db
+gorm.db
+golang-gin-realworld-example-app/gorm_test.db
+
+# Ignore large test result files
+**/k6-tests/*-results.json
+*.mp4

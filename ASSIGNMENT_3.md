@@ -1509,4 +1509,3 @@ Document:
 
 ### Deadline
 November 30, 2025, 11:59 PM
-
